@@ -1,23 +1,21 @@
-
 public class Main {
-
     public static void main(String[] args) {
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
 
-        Item book = new Item("Lord of the rings", 8);
-        Item phone = new Item("Nokia 3210", 8);
-        Item brick = new Item("brick", 8);
+        Suitcase adasCase = new Suitcase(10);
+        adasCase.addItem(book);
+        adasCase.addItem(phone);
 
-        Suitcase suitcase = new Suitcase(20);
-        System.out.println(suitcase);
+        Suitcase pekkasCase = new Suitcase(10);
+        pekkasCase.addItem(brick);
 
-        suitcase.addItem(book);
-        System.out.println(suitcase);
+        Hold hold = new Hold(1000);
+        hold.addSuitcase(adasCase);
+        hold.addSuitcase(pekkasCase);
 
-        suitcase.addItem(phone);
-        System.out.println(suitcase);
-
-        suitcase.addItem(brick);
-        System.out.println(suitcase);
+        System.out.println("The suitcases in the hold contain the following items:");
+        hold.printItems();
     }
-
 }
